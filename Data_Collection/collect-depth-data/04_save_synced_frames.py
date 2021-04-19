@@ -234,7 +234,10 @@ def store_frames(in_q):
         frames_path = dest / Path(str(uuid4()))
         frames_path.mkdir(parents=False, exist_ok=False)
         for stream_name, item in frames_dict.items():
-            cv2.imwrite(str(frames_path / Path(f"{stream_name}.png")), item)
+            if stream_name == "depth":
+                np.save(str(frames_path / Path(f"{stream_name}.npy")), depth)
+            else:
+                cv2.imwrite(str(frames_path / Path(f"{stream_name}.png")), item)
 
 store_p = Process(target=store_frames, args=(frame_q, ))
 store_p.start()
