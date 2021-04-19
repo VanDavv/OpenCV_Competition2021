@@ -23,7 +23,7 @@ def check_range(min_val, max_val):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-t', '--threshold', default=0.3, type=float, help="Maximum difference between packet timestamps to be considered as synced")
-parser.add_argument("-sp", "--savepath", default='/home/vandavv/dev/luxonis/OpenCV_Competition2021/collected_depth', help="output path for depth data")
+parser.add_argument("-sp", "--savepath", default='/home/pi/collected_depth/', help="output path for depth data")
 # parser.add_argument("-n", "--numframes", default=5, help="Number of frames to be saved")
 parser.add_argument('-d', '--dirty', action='store_true', default=False, help="Allow the destination path not to be empty")
 parser.add_argument('-nd', '--no-debug', dest="prod", action='store_true', default=False, help="Do not display debug output")
