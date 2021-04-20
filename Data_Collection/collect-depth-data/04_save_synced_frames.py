@@ -235,7 +235,7 @@ def store_frames(in_q):
         frames_path.mkdir(parents=False, exist_ok=False)
         for stream_name, item in frames_dict.items():
             if stream_name == "depth":
-                np.save(str(frames_path / Path(f"{stream_name}.npy")), depth)
+                np.save(str(frames_path / Path(f"{stream_name}.npy")), item)
             else:
                 cv2.imwrite(str(frames_path / Path(f"{stream_name}.png")), item)
 
